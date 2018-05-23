@@ -4,40 +4,107 @@
 <meta charset="utf-8">
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 <title>无标题文档</title>
-<link rel="stylesheet" href="css/home.css" />
+<link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+<link rel="stylesheet" href="css/common.css" />
+<style type="text/css">
+	.backscreen{
+		width: 100%;
+		height: 100%;
+		background-color: powderblue;
+		background-size:cover;
+		position:fixed;
+		z-index:-10;
+	}
+	.cbtn{
+	    position:fixed;
+	    z-index: 1;
+	    top:10px;
+	    left:5px;
+	    width:30px; /* 按需改变数值 */
+	    height:30px; /* 按需改变数值 */
+	}
+	.center{
+	    position:fixed;
+	    z-index:-1;
+	    top:50%;
+	    left:50%;
+	    width:30px; /* 按需改变数值 */
+	    height:30px; /* 按需改变数值 */
+	    margin-top:-15px; /* height数值的一半 */
+	    margin-left:-15px; /* width数值的一半 */
+	    -webkit-box-shadow:0 0 3px rgba(0,0,0,.2);
+	    -moz-box-shadow:0 0 3px rgba(0,0,0,.2);
+	    box-shadow:0 0 3px rgba(0,0,0,.2);
+	    background: #fff;
+	    padding: 10px;
+	}
+	.center2{
+	    position:fixed;
+	    z-index:9999;
+	    top:50%;
+	    /*left:50%;*/
+	    width:90%; /* 按需改变数值 */
+	    margin-left: 3%;
+	    height:200px; /* 按需改变数值 */
+	    margin-top:-100px; /* height数值的一半 */
+/*	    margin-left:-15px; /* width数值的一半 */*/
+	    -webkit-box-shadow:0 0 3px rgba(0,0,0,.2);
+	    -moz-box-shadow:0 0 3px rgba(0,0,0,.2);
+	    box-shadow:0 0 3px rgba(0,0,0,.2);
+	    background: #fff;
+	    padding: 10px;
+	    display: none;
+	}
+	.display{
+		display: block!important;
+	}
+</style>
 </head>
 <body>
-	<div>
-		<img class="index" src="./images/hsplitter_thumb.png">
-	</div>
-	<div class="mood">
-		<img class="moodbackground" src="./images/omlogo03.png">
-		<div class="moodcontent">
-			<img src="./images/omlogo05.png">
-			<img class="center" src="./images/omlogo06.png">
-			<img src="./images/omlogo07.png">
-		</div>
-		<div class="moodcontentlast">
-			<img src="./images/omlogo08.png">
-		</div>
-	</div>
-	<div class="mood">
-		<img class="moodbackground" src="./images/omlogo04.png">
-		<div class="moodcontent">
+  <div id="app">
+  		<mt-button class="cbtn" @click.native="handleClick3">...</mt-button>
+		<img class="backscreen" @click="handleClick2" src="./images/map.png">
+		<img class="center" @click="handleClick" src="./images/omlogo08.png">
+		<div class="center2"  v-bind:class="{ 'display': display }">
 			<img src="./images/omlogo09.png">
-			<img class="center" src="./images/omlogo10.png">
+			<img src="./images/omlogo10.png">
 			<img src="./images/omlogo11.png">
-			
-		</div>
-		<div class="moodcontentlast">
 			<img src="./images/omlogo12.png">
+			<img src="./images/omlogo09.png">
+			<img src="./images/omlogo10.png">
 		</div>
-	</div>
-	<div class="bdiv">
-		<img src="./images/iosonswitch.png"><span class="bfont">地图已经打开</span>
-	</div>
-	<div class="setdiv">
-		<div style="background-color: rgb(176, 224, 230);width: 60%;height: 500px"></div>
-	</div>	
+		<mt-popup
+		  v-model="popupVisible"
+		  position="left">
+		  <img src="./images/omlogo09.png"> X 12枚
+		  <img src="./images/omlogo09.png"> X 4枚
+		  <mt-button @click.native="handleClick">我的心情 <img src="../images/omlogo12.png" height="20" width="20" slot="icon"></mt-button>
+		</mt-popup>
+  </div>
+ <!-- 先引入 Vue -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data:{
+        display: false,
+        popupVisible: false,
+  	  },
+      methods: {
+        handleClick: function() {
+          this.display = true;
+        },
+        handleClick2: function() {
+          this.display = false;
+          this.popupVisible = false;
+        },
+        handleClick3: function() {
+          this.popupVisible = true;
+        }
+      }
+    })
+  </script>
 </body>
 </html>

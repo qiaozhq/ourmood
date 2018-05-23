@@ -5,7 +5,7 @@ a, a.link{color:#666;text-decoration:none;font-weight:500;}
 a, a.link:hover{color:#666;}
 h1,h2,h3,h4,h5,h6{font-weight: normal;}
 
-.login{width:100%;height:100%;background-color: powderblue;background-size:cover;position:fixed;z-index:-10;}
+/*.login{width:100%;height:100%;background-color: powderblue;background-size:cover;position:fixed;z-index:-10;}
 .welcome{width:100%;margin:25% 0;}
 .welcome img{width:100%;}
 .welcome .title_sub1{
@@ -33,7 +33,6 @@ h1,h2,h3,h4,h5,h6{font-weight: normal;}
 .radis{
 	border-radius: 6px;
 }
-.login-inp{margin:0 30px 5px 30px;overflow: hidden;}
 .login-inp label{width:4em;text-align:center;display:inline-block;color:#fff;}
 .login-inp input{line-height:40px;width: 310px;padding-left: 5px;color: rgb(153, 153, 153);background-color: rgba(255, 255, 255, 1);border:none;outline: none;}
 
@@ -55,10 +54,4 @@ h1,h2,h3,h4,h5,h6{font-weight: normal;}
 }
 .login-inp a{display:block;width:100%;text-align:center;line-height:40px;color:#fff;font-size:16px;letter-spacing:5px;}
 .login-txt{text-align:center;color:#fff;}
-.login-txt a{color:#fff;padding:0 5px;}
-.loginbtn{
-	background-color: #ff0380;
-	margin-top: 30px;
-	font-family: 微软雅黑;
-	cursor: pointer;
-}
+.login-txt a{color:#fff;padding:0 5px;}*/
