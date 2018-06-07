@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+  <link rel="stylesheet" href="css/common.css" />
+  <style type="text/css">
+   body{
+     background-color: rgb(176, 224, 230);
+   }
+   .headinfo{
+      border-color: rgb(176, 224, 230);
+      border: 1px solid;
+      color: #fff;
+   }
+   .headimg{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+   }
+   .mint-cell-wrapper{
+      background: powderblue;
+   }
+   .tab01 .mint-cell-title {
+        -webkit-box-flex: 0!important;
+        -ms-flex: 0!important;
+        flex: 0!important;
+    }
+    .flexdiv{
+      display: flex;
+      border:1px solid lightpink;
+    }
+    .datetime{
+      flex:1;
+      color: #000;
+    }
+    .png{
+      flex: 1;
+      padding-right: 8px;
+    }
+    .info{
+      flex:10;
+      color: lightpink;
+    }
+/*   .tab01{
+    padding: 1em 0 0 1em;
+   }
+   .tab01 span{
+    vertical-align: super;
+   }*/
+  </style>
+</head>
+<body>
+  <div id="app">
+    <mt-cell>
+      <img src="./images/home01.png">
+      <span class="headinfo">公元 2018年4月12日 9点08分 56秒</span>
+      <img class="headimg" src="./images/c_person.jpg">
+    </mt-cell>
+    <mt-navbar v-model="selected">
+      <mt-tab-item id="1">今天</mt-tab-item>
+      <mt-tab-item id="2">这礼拜</mt-tab-item>
+      <mt-tab-item id="3">这个月</mt-tab-item>
+      <mt-tab-item id="4">某一天</mt-tab-item>
+      <mt-tab-item id="5">某段时光</mt-tab-item>
+    </mt-navbar>
+
+  <!-- tab-container -->
+  <mt-tab-container v-model="selected">
+    <mt-tab-container-item id="1" class="tab01">
+       <mt-cell>
+        <img src="./images/heart-cnt01.png" height="30" width="30">
+        <span>X 12枚</span>
+        <img src="./images/heart-cnt02.png" height="30" width="30">
+        <span>X 12枚</span>
+      </mt-cell>
+      <div class="flexdiv">
+        <span class="datetime">08:55 Apr:12</span>
+        <span class="info">上班路上充满阳光</span>
+        <img class="png me" src="./images/me01.png" height="20" width="20">
+        <img class="png mic" src="./images/mic01.png" height="20" width="20">
+        <img class="png cam" src="./images/cam01.png" height="20" width="20">
+        <img class="png note" src="./images/note01.png" height="20" width="20">
+      </div>
+    </mt-tab-container-item>
+    <mt-tab-container-item id="2" class="tab02">
+       <mt-cell>
+        <img src="./images/heart-cnt01.png" height="30" width="30">
+        <span>X 12枚</span>
+        <img src="./images/heart-cnt02.png" height="30" width="30">
+        <span>X 12枚</span>
+      </mt-cell>
+      <div class="flexdiv">
+        <span class="datetime">08:55 Apr:12</span>
+        <span class="info">上班路上充满阳光</span>
+        <img class="png me" src="./images/me01.png" height="20" width="20">
+        <img class="png mic" src="./images/mic01.png" height="20" width="20">
+        <img class="png cam" src="./images/cam01.png" height="20" width="20">
+        <img class="png note" src="./images/note01.png" height="20" width="20">
+      </div>
+    </mt-tab-container-item>
+    <mt-tab-container-item id="3" class="tab03">
+      <mt-cell>
+        <img src="./images/heart-cnt01.png" height="30" width="30">
+        <span>X 12枚</span>
+        <img src="./images/heart-cnt02.png" height="30" width="30">
+        <span>X 12枚</span>
+      </mt-cell>
+      <div class="flexdiv">
+        <span class="datetime">08:55 Apr:12</span>
+        <span class="info">上班路上充满阳光</span>
+        <img class="png me" src="./images/me01.png" height="20" width="20">
+        <img class="png mic" src="./images/mic01.png" height="20" width="20">
+        <img class="png cam" src="./images/cam01.png" height="20" width="20">
+        <img class="png note" src="./images/note01.png" height="20" width="20">
+      </div>
+    </mt-tab-container-item>
+    <mt-tab-container-item id="4" class="tab04">
+      <mt-cell>
+        <img src="./images/heart-cnt01.png" height="30" width="30">
+        <span>X 12枚</span>
+        <img src="./images/heart-cnt02.png" height="30" width="30">
+        <span>X 12枚</span>
+      </mt-cell>
+      <div class="flexdiv">
+        <span class="datetime">08:55 Apr:12</span>
+        <span class="info">上班路上充满阳光</span>
+        <img class="png me" src="./images/me01.png" height="20" width="20">
+        <img class="png mic" src="./images/mic01.png" height="20" width="20">
+        <img class="png cam" src="./images/cam01.png" height="20" width="20">
+        <img class="png note" src="./images/note01.png" height="20" width="20">
+      </div>
+    </mt-tab-container-item>
+    <mt-tab-container-item id="5" class="tab05">
+      <mt-cell>
+        <img src="./images/heart-cnt01.png" height="30" width="30">
+        <span>X 12枚</span>
+        <img src="./images/heart-cnt02.png" height="30" width="30">
+        <span>X 12枚</span>
+      </mt-cell>
+      <div class="flexdiv">
+        <span class="datetime">08:55 Apr:12</span>
+        <span class="info">上班路上充满阳光</span>
+        <img class="png me" src="./images/me01.png" height="20" width="20">
+        <img class="png mic" src="./images/mic01.png" height="20" width="20">
+        <img class="png cam" src="./images/cam01.png" height="20" width="20">
+        <img class="png note" src="./images/note01.png" height="20" width="20">
+      </div>
+    </mt-tab-container-item>
+  </mt-tab-container>
+  </div>
+</body>
+  <!-- 先引入 Vue -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data:{
+        selected: '1',
+      },
+      methods: {
+        handleClick: function() {
+          this.$toast('Hello world!')
+        }
+      }
+    })
+  </script>
+</html>
