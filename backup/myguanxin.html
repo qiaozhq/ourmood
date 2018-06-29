@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+  <link rel="stylesheet" href="css/common.css" />
+  <style type="text/css">
+   html{
+      height: 100%;
+   }
+   body{
+      background-color: rgb(176, 224, 230);
+      height: 100%;
+   }
+   #app{
+      height: 100%;
+   }
+   .row1{
+      display: flex;
+      align-items: Center;
+      margin-top: 2em;
+   }
+   .row1 .time{
+      border: 1px solid rgb(0, 191, 255);
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      text-decoration: none;
+      font-family: 微软雅黑;
+      color: rgb(255, 255, 255);
+      padding: 0 10px;
+      margin-left: 10px;
+      border-radius: 4px;
+   }
+   .row2 div{
+      display: inline-block;
+      width: 82px;
+      height: 18px;
+      color: rgb(255, 0, 126);
+      line-height: 18px;
+      padding-left: 6px;
+   }
+   .myguanxindiv{
+      width: auto;
+      display: inline-block;
+      margin: 0 auto;
+   }
+   .mint-tab-container-item {
+      text-align: center;
+    }
+   .myguanxin{
+      border-radius: 50px;
+   }
+   .my1{
+      margin-right: 15px;
+   }
+   .my2, .my3{
+      margin: 0 15px;
+   }
+   .my4{
+      margin-left: 15px;
+   }
+/*   .tab01{
+    padding: 1em 0 0 1em;
+   }
+   .tab01 span{
+    vertical-align: super;
+   }*/
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="row1">
+      <img src="./images/back01.png">
+      <span class="time">公元 2018年4月12日 9点08分 56秒</span>
+    </div>
+    <div class="row2">
+      <div>我的关心</div>
+      <div></div>
+      <div>关心我的</div>
+      <div></div>
+    </div>
+    <mt-tab-container v-model="active">
+      <mt-tab-container-item id="tab-container1">
+       <div class="myguanxindiv">
+         <img class="myguanxin my1" src="./images/c_person.jpg" height="50" width="50">
+         <img class="myguanxin my2" src="./images/c_person2.jpg" height="50" width="50">
+         <img class="myguanxin my3" src="./images/c_person.jpg" height="50" width="50">
+         <img class="myguanxin my4" src="./images/c_person2.jpg" height="50" width="50">
+       </div>
+      </mt-tab-container-item>
+      <mt-tab-container-item id="tab-container2">
+       <img class="guanxinme" src="./images/c_person.jpg" height="50" width="50">
+       <img class="guanxinme" src="./images/c_person2.jpg" height="50" width="50">
+       <img class="guanxinme" src="./images/c_person.jpg" height="50" width="50">
+       <img class="guanxinme" src="./images/c_person2.jpg" height="50" width="50">
+      </mt-tab-container-item>
+    </mt-tab-container>
+  </div>
+</body>
+  <!-- 先引入 Vue -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data:{
+        active: 'tab-container1',
+      },
+      methods: {
+        handleClick: function() {
+          this.$toast('Hello world!')
+        }
+      }
+    })
+  </script>
+</html>
